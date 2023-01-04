@@ -1,6 +1,8 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Crashes;
 
 namespace missingaymbols
 {
@@ -11,6 +13,9 @@ namespace missingaymbols
             InitializeComponent();
 
             MainPage = new MainPage();
+
+            AppCenter.LogLevel = LogLevel.Verbose;
+
         }
 
         protected override void OnStart()
