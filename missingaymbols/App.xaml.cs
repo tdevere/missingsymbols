@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Crashes;
+using SkiaSharp;
 
 namespace missingaymbols
 {
@@ -16,6 +17,8 @@ namespace missingaymbols
 
             AppCenter.LogLevel = LogLevel.Verbose;
 
+            var temp = SkiaSharp.GRBackend.Dawn;
+            
         }
 
         protected override void OnStart()
