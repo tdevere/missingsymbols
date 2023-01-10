@@ -7,7 +7,7 @@ https://github.com/xamarin/xamarin-macios/issues/17180
 1. clone https://github.com/tdevere/missingsymbols
 2. Configure build for Xamarin.iOS 15.4 and XCode 13.2.1; signed build (I am using App Center build services for this test however, the issue reproduces on local builds as well.
 3. The final product includes symbols for the main app and referenced package - libSkiaSharp.framework.dSYM in this sample (this reference is used for example only, the problem happens on all referenced packages as far as we know.)
-4. Now, change the build to configuration to Xamarin.iOS and XCode 14.1 and rebuild
+4. Now, change the build to configuration to Xamarin.iOS 16.0 and XCode 14.1 and rebuild
 
 ### Expected Behavior
 we would expect to see both symbols get created
