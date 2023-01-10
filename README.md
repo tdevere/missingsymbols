@@ -1,4 +1,6 @@
-# missingsymbols
+# Upgrading from Xamarin.iOS 15.4 and XCode 13.2.1 to Xamarin.iOS 16 and XCode 14.1 breaks symbol creation for referenced packages. Only main app produces symbols.
+
+https://github.com/xamarin/xamarin-macios/issues/17180
 
 ### Steps to Reproduce
 
