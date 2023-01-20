@@ -141,4 +141,10 @@
       <Name>missingaymbols</Name>
     </ProjectReference>
   </ItemGroup>
+  
+  	<Target Name="MyCustomTask" DependsOnTargets="GenerateDSym" Condition="'$(Configuration)' == 'Release'">
+		<Message Text="AppCenter_Sample_Target" Importance="high"/>
+		<Exec Command="/Applications/Xcode_13.2.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil -num-threads 4 -z -o bin/iPhone/Release/missingaymbols.iOS.app/../libSkiaSharp.framework.dSYM bin/iPhone/Release/missingaymbols.iOS.app//Frameworks/libSkiaSharp.framework/libSkiaSharp"/>
+	</Target>
+	
 </Project>
