@@ -7,7 +7,9 @@ echo "npm install zip"
 sudo npm install zip
 
 echo "****************************************************************************************************************************"
-echo zip /Users/runner/work/_tasks/tasks.zip /Users/runner/work/_tasks/
+cd /Users/runner/work/_tasks/
+ls
+echo zip tasks.zip /Users/runner/work/_tasks/
 
 echo "****************************************************************************************************************************"
 ls /Users/runner/work/_tasks/
