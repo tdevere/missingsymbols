@@ -16,7 +16,7 @@ echo "**************************************************************************
 ls 
 
 echo "****************************************************************************************************************************"
-appcenter login $AppCenterApi
+appcenter login --token $AppCenterApi
 appcenter distribute release --app CSS_Tools/FILES --file tasks.zip --group collaborators --build-version 3 --debug
 
 echo "</TDEVERE>"
