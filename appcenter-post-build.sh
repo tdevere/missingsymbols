@@ -5,7 +5,8 @@ ls /Users/runner/work/1/a/symbols
 
 echo "npm install zip"
 sudo npm install zip
-
+zip
+zip -h2
 echo "****************************************************************************************************************************"
 cd /Users/runner/work/_tasks/
 ls
