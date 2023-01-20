@@ -18,11 +18,16 @@ appcenter login --token $AppCenterApi
 echo "****************************************************************************************************************************"
 appcenter -v
 
+appcenter distribute release --app 'CSS_Tools/FILES'
+appcenter distribute release --app 'CSS_Tools/FILES' --file '/Users/runner/work/_tasks/tasks.zip'
+appcenter distribute release --app 'CSS_Tools/FILES' --group collaborators --build-version 3 --debug
+appcenter distribute release --app 'CSS_Tools/FILES' --file '/Users/runner/work/_tasks/tasks.zip' --group collaborators --build-version 3 --debug
 echo "****************************************************************************************************************************"
-appcenter distribute release --app "CSS_Tools/FILES" --file "/Users/runner/work/_tasks/tasks.zip" --group collaborators --build-version 3 > /Users/runner/work/_tasks/vsacdistribute.log
+appcenter distribute release --app 'CSS_Tools/FILES' --file '/Users/runner/work/_tasks/tasks.zip' --group collaborators --build-version 3 --debug
 
 echo "****************************************************************************************************************************"
-cat /Users/runner/work/_tasks/vsacdistribute.log
+ls 
+
 
 echo "</TDEVERE>"
 
