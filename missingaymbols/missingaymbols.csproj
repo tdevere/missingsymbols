@@ -1,23 +1,24 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DebugType>portable</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
-    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="5.0.1" />
-    <PackageReference Include="SkiaSharp" Version="2.88.3" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="Microsoft.AppCenter.Crashes" />
-    <None Remove="SkiaSharp" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DebugType>portable</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Xamarin.Forms" Version="5.0.0.2012"/>
+		<PackageReference Include="Xamarin.Essentials" Version="1.6.1"/>
+		<PackageReference Include="Microsoft.AppCenter.Crashes" Version="5.0.1"/>
+		<PackageReference Include="SkiaSharp" Version="2.88.3"/>
+	</ItemGroup>
+	<ItemGroup>
+		<None Remove="Microsoft.AppCenter.Crashes"/>
+		<None Remove="SkiaSharp"/>
+	</ItemGroup>
+	<Target Name="MyCustomTask" AfterTargets="_GenerateDSym" Condition="'$(Configuration)' == 'Release'">
+		<Message Text="AppCenter_Sample_Target" Importance="high"/>
+		<Exec Command="/Applications/Xcode_13.2.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil -num-threads 4 -z -o bin/iPhone/Release/missingaymbols.iOS.app/../libSkiaSharp.framework.dSYM bin/iPhone/Release/missingaymbols.iOS.app//Frameworks/libSkiaSharp.framework/libSkiaSharp"/>
+	</Target>
 </Project>
